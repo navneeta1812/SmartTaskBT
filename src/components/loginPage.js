@@ -64,13 +64,7 @@ export default class loginPage extends React.Component {
      email: this.state.email,
      password: this.state.password
     }
-    // sendFormData(data).then(res=>{
-    //   if(res.status===200){
-    //     alert(res.data);
-    //     this.props.history.push('/');
-    //   }else{
-  
-    //   } 
+    
     }
 
     render() {
