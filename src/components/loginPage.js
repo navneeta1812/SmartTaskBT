@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default class loginPage extends React.Component {
 
   constructor(props){
-    
+
     super(props);
      this.state = {
        isDisabled:true
@@ -65,8 +65,7 @@ export default class loginPage extends React.Component {
      email: this.state.email,
      password: this.state.password
     }
-    
-    }
+  }
 
     render() {
         return(
@@ -89,7 +88,7 @@ export default class loginPage extends React.Component {
                     <label for="password" className="form__label">Password</label>
                     <br />
                     <br />
-                    {this.state.passwordError ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>    Please enter some value</span> : ''}
+                    {this.state.passwordError ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>    Value should be above 6</span> : ''}
 
                   </div>  
                   
