@@ -92,8 +92,7 @@ export default class loginPage extends React.Component {
 
                   </div>  
                   
-                  <input type="submit" className="form__button" value="LogIn" onClick={this.submitForm} />
-
+                  <Link to={"/profile"}><button className="form__button">LogIn</button></Link>
                   <p>Not a user??<Link to={"/signup"}>Sign up </Link></p>    
               </form>
 

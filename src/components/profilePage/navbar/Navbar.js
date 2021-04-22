@@ -1,15 +1,33 @@
 import React from 'react';
-import "./Navbar.css";
+import './Navbar.css';
+import { FontAwesomeIcon } from "@fortawesome/fontawesome-free";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = ({ sidebarOpen, openSidebar }) => {
-  return (
-    <nav className="navbar">
-      <div onClick={() => openSidebar()}>
+export default class Navbar extends React.Component{
 
-      </div>
-    </nav>
-  )
+    render() {
+        return (
+        <nav className="navbar">
+            <div>
+            <h2>SmartTask-BT</h2>
+            </div>
+           
+            <div className="navbar__right">
+            <a href="#">Report Task</a>
+                <a href="#">Project</a>
+                <div>
+                <a href="#">
+                <FontAwesomeIcon icon={faUser} className="nav_icon"/>
+                </a>
+                <span>User Name</span>
+                </div>
+                
+
+            </div>
+        </nav>
+    );
+
+    }
+    
 }
-
-export default Navbar;
 

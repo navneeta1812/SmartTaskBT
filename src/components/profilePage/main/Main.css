@@ -1,0 +1,43 @@
+
+main {
+  grid-area: main;
+  background-color: rgb(250, 244, 244);
+  padding: 0 10px 0 10px;
+}
+
+.main_div {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card{
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
+  border-radius: 30px;
+}
+
+.card2 {
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
+  border-radius: 30px;
+}
+
+.card3 {
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
+  border-radius: 30px;
+}
+
+.card4 {
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
+  border-radius: 30px;
+}
+
+
