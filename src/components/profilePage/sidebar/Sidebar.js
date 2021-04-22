@@ -5,6 +5,9 @@ import "./Sidebar.css";
 
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+
+
+    
     return(
         <div className={sidebarOpen ? "sidebar_responsive" : ""} id="sidebar">
             <div className="sidebar__title">
