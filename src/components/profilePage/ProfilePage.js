@@ -5,7 +5,7 @@ import Main from "./main/Main.js";
 import Sidebar from './sidebar/Sidebar.js';
 
 
-export default class ProfilePage extends React.Component{
+ class ProfilePage extends React.Component{
 
   render() {
     return ( 
@@ -13,9 +13,8 @@ export default class ProfilePage extends React.Component{
         <Navbar  /> 
          <Main />
          <Sidebar  />
-  
       </div>
     );
   }
 }
-
+export default ProfilePage;

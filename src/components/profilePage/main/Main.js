@@ -19,7 +19,7 @@ export default class Main extends React.Component {
                     <div className="card">
                         <h2>Profile</h2>
                         <img src={propic}  alt="profilePic" />
-                        <button> Upload Pic</button>
+                        <input type="file" />
                         <div>
                             <div>
                                 <h4><b>John Doe</b></h4> 
@@ -27,16 +27,13 @@ export default class Main extends React.Component {
                             <div>
                                 <p>Software Engineer</p> 
                             </div>  
-                        </div> 
-                    </div> 
-                    
-                    <div className="card2">
-                        <p>email@gmail.com</p>
-                        <button>Edit Profile</button>
+                            <p>email@gmail.com</p>
+                        <button className="button_decor">Edit Profile</button>
                         <p>Active Task 23</p>
                         <p>Task Completed 103</p>
-                    </div>
-                    
+                        </div> 
+                    </div> 
+                
                     
                     <div className="card3">
                         <h3>Assigned Project</h3>

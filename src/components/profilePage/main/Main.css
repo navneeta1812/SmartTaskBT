@@ -9,35 +9,42 @@ main {
   display: grid;
   gap: 20px;
   padding: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr ;
+}
+
+
+.button_decor {
+  background-color: rgb(213, 230, 67);
+  padding: 10px 45px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 8px;
+  color: rgb(63, 62, 62);
+  transition: .3s;
+  font-size: medium;
+  outline: none ;
 }
 
 .card{
   box-sizing: border-box;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
-  border-radius: 30px;
 }
 
-.card2 {
-  box-sizing: border-box;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
-  border-radius: 30px;
-}
 
 .card3 {
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 .card4 {
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0 10px 25px rgba(153, 142, 142, 0.2);
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 
