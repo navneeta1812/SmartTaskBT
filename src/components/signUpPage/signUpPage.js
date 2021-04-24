@@ -37,6 +37,7 @@ export default class signup extends React.Component {
             [name]: value
         });
 
+
         if(c.target.name === 'firstName'){
             if(c.target.value === '' || c.target.value == null ){
                 this.setState({
@@ -98,44 +99,43 @@ export default class signup extends React.Component {
 
     submitForm(c){
         c.preventDefault();
+    
         const data = {
-            fName: this.state.fName,
-            lName: this.state.lName,
+            fName: this.state.firstName,
+            lName: this.state.lastName,
             email: this.state.email,
             password: this.state.password,
-            confirmPassword: this.state.confirmPassword,
-            checkbox: this.state.checkbox
+            checkbox:this.state.checkbox
+        }
+
+        // Do signup in firebase/
+        // for login and signup u need email and pass word
+        if(!this.state.confirmPasswordError && this.state.checkbox){
+            console.log(data);
 
         }
+    
+    
     }
-
-
 
     render() {
         return (
 
             <div className="form_body">
                 <form className="form_set">
-                    <h1 className="form_title">Sign Up</h1>
-                        <p>Please fill in this form to create an accout!</p>
-                    
+                    <h1 className="form_title">Sign Up</h1>                    
                     <div className="form_div_">
                         <input type="text" name="firstName" className="form_input_" autoComplete="off" placeholder=" " onChange={(c)=>{this.handleChange(c)}} />
                         <label for="firstName" className="form_label" >First Name</label>
-                        {/* <br />
-                        <br />
-                        {this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''} */}
-
+                
                         <input type="text" name="lastName" className="form_input_" autoComplete="off" placeholder=" " onChange={(c)=>{this.handleChange(c)}} />
                         <label for="lastName" className="form_label_">Last Name</label>
-                        <br />
-                        <br />
-                        <br />
-                        {this.state.lastNameError && this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''}
-
 
                     </div>
+                    {this.state.lastNameError || this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Name should not be empty</span> : ''}
+
                     <div className="form_div">
+
                         <input type="email" name="emailId" className="form_input" autoComplete="off" placeholder=" " onChange={(c)=>{this.handleChange(c)}} />
                         <label for="emailId" className="form_label">Email</label>
                         <br />
@@ -163,10 +163,10 @@ export default class signup extends React.Component {
 
                     </div>
                     <div >
-                        <p><input type="checkbox" onChange={(c)=>{this.handleChange(c)}} />I accept all the Terms of Use and Privicy Policy </p>
+                        <p><input type="checkbox" name="checkbox" onChange={(c)=>{this.handleChange(c)}} />I accept all the Terms of Use and Privicy Policy </p>
                         {this.state.name ? <span style={{color:"red", fontSize: 12, fontWeight:"bold"}}>PLease accept terms and condition</span> : '' }
                     </div>
-                    <button className="button_decor">Sign Up</button>
+                    <button className="button_decor" onClick={this.submitForm}>Sign Up</button>
                     <p>Already a user?<Link to={"/"}>Log In</Link></p>    
 
                 </form>

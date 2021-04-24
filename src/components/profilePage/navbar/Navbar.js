@@ -3,8 +3,25 @@ import './Navbar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import fbHelper from "../../../cofig/FireBaseHelper";
 
 export default class Navbar extends React.Component{
+
+
+    constructor(props){
+
+        super(props);
+        this.state={
+
+        }
+    }
+
+    logout(){
+
+        fbHelper.auth().signOut();
+
+    }
+
 
     render() {
         return (
@@ -26,7 +43,7 @@ export default class Navbar extends React.Component{
                     <button className="dropbtn">User Name</button>
                     <div className="dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
-                        <Link to={"/"}>Log Out</Link>
+                        <a onClick={this.logout}>Log Out</a>
                     </div>
                     </div>
                 </span>

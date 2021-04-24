@@ -1,8 +1,7 @@
 import React from 'react';
 import  "./loginPage.css";
 import { Link } from "react-router-dom";
-
-
+import  fbHelper  from "../cofig/FireBaseHelper";
 
 
 export default class loginPage extends React.Component {
@@ -65,6 +64,19 @@ export default class loginPage extends React.Component {
      email: this.state.email,
      password: this.state.password
     }
+
+    // DO login in firebase
+    if(!this.state.passwordError){
+      
+      fbHelper.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user)=>{
+        console.log(user);
+      }).catch((err)=>{
+        
+        console.log(err);
+      })
+    }
+   
+
   }
 
     render() {
@@ -91,8 +103,8 @@ export default class loginPage extends React.Component {
                     {this.state.passwordError ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>    Value should be above 6</span> : ''}
 
                   </div>  
-                  
-                  <Link to={"/profile"}><button className="form__button">LogIn</button></Link>
+                  {this.state.loginErr ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}> Invalid Credentials</span> : ''}
+                  <button className="form__button" onClick={this.submitForm}>Login</button>
                   <p>Not a user??<Link to={"/signup"}>Sign up </Link></p>    
               </form>
 
