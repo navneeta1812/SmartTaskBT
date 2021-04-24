@@ -1,0 +1,57 @@
+
+main {
+  display: grid;
+  grid-area: main ;
+  background-color: rgb(250, 244, 244);
+  padding: 20px 20px 0 20px;
+}
+
+
+table{
+
+  border:1px solid #bdc3c7 ;
+  box-shadow: 2px 2px 12px rgba(131, 129, 129, 0.2), -1px -1px 8px rgba(117, 116, 116, 0.2);
+  height: 400px;
+
+}
+
+table, th, td {
+  border:1px solid #bdc3c7 ;
+  border-collapse: collapse;
+}
+
+th{
+  display: table-caption;
+  height: 50px;
+  font-size: 20px;
+  text-align: left;
+  background-color: #202020;
+  color: rgb(213, 230, 67);
+  padding: 10px;
+}
+
+
+.RTbutton_decor {
+  margin-right: auto;
+  padding: .75rem 2rem;
+  outline: none;
+  border: none;   
+  background-color: #202020;
+  font-size: 18px;
+  color:rgb(213, 230, 67);
+  font-weight: 700;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: .3s;
+  width: 180px;
+  height: 50px;
+}
+
+.TD_left {
+  text-align: center;
+  font-size: 18px;
+}
+
+textarea {
+  size: inherit;
+}
