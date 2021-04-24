@@ -40,7 +40,8 @@ export default class signup extends React.Component {
         if(c.target.name === 'firstName'){
             if(c.target.value === '' || c.target.value == null ){
                 this.setState({
-                    firstNameError:true
+                    firstNameError:true,
+                    lastNameError:true
                 })
             }else{
                 this.setState({
@@ -53,7 +54,8 @@ export default class signup extends React.Component {
         if(c.target.name === 'lastName'){
             if(c.target.value === '' || c.target.value == null ){
                 this.setState({
-                    lastNameError:true
+                    lastNameError:true,
+                    firstNameError:true
                 })
             }else{
                 this.setState({
@@ -120,16 +122,16 @@ export default class signup extends React.Component {
                     <div className="form_div_">
                         <input type="text" name="firstName" className="form_input_" autoComplete="off" placeholder=" " onChange={(c)=>{this.handleChange(c)}} />
                         <label for="firstName" className="form_label" >First Name</label>
+                        {/* <br />
                         <br />
-                        <br />
-                        {this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''}
+                        {this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''} */}
 
                         <input type="text" name="lastName" className="form_input_" autoComplete="off" placeholder=" " onChange={(c)=>{this.handleChange(c)}} />
                         <label for="lastName" className="form_label_">Last Name</label>
                         <br />
                         <br />
                         <br />
-                        {this.state.lastNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''}
+                        {this.state.lastNameError && this.state.firstNameError ? <span style={{color: "red",fontSize:12, fontWeight:"bold"}}> Cannot be empty</span> : ''}
 
 
                     </div>
@@ -162,7 +164,7 @@ export default class signup extends React.Component {
                     </div>
                     <div >
                         <p><input type="checkbox" onChange={(c)=>{this.handleChange(c)}} />I accept all the Terms of Use and Privicy Policy </p>
-                        {this.state.name ? <span style={{color:"red", fontSize: 12, fontWeight:"bold"}}>Checkbox should be selected</span> : '' }
+                        {this.state.name ? <span style={{color:"red", fontSize: 12, fontWeight:"bold"}}>PLease accept terms and condition</span> : '' }
                     </div>
                     <button className="button_decor">Sign Up</button>
                     <p>Already a user?<Link to={"/"}>Log In</Link></p>    
