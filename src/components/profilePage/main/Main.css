@@ -27,6 +27,11 @@ main {
   outline: none ;
 }
 
+img{
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px 3px rgba(153, 142, 142, 0.2);
+}
+
 .card{
   box-sizing: border-box;
   text-align: center;

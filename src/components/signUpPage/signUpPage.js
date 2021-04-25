@@ -101,21 +101,22 @@ export default class signup extends React.Component {
     submitForm(c){
         c.preventDefault();
     
-        const data = {
-            fName: this.state.firstName,
-            lName: this.state.lastName,
-            email: this.state.email,
-            password: this.state.password,
-            checkbox:this.state.checkbox
-        }
+        
 
         // Do signup in firebase/
         // for signup u need email and pass word
         if(!this.state.confirmPasswordError && this.state.checkbox){
            
-            fbHelper.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then((user)=>{
+            fbHelper.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then(data=>{
                 //now we have to save the data(fname ,lname ,email,uid) in database
+                const employee = {
+                    firstname:this.state.firstName,
+                    lastname: this.state.lastName,
+                    email:this.state.email,
+                    uid:data.user.uid
+                }
 
+                fbHelper.database().ref("employee").child(data.user.uid).set(employee);
 
             }).catch((err)=>{
                 console.log(err);
