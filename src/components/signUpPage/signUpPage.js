@@ -6,7 +6,7 @@ import fbHelper from "../../cofig/FireBaseHelper";
 
 export default class signup extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             isDisabled:true

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import fbHelper from "../../../cofig/FireBaseHelper";
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
 export default class Navbar extends React.Component{
 
@@ -43,7 +44,7 @@ export default class Navbar extends React.Component{
                     <button className="dropbtn">User Name</button>
                     <div className="dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
-                        <a onClick={this.logout}>Log Out</a>
+                        <a onClick={this.logout}><FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>Log Out</a>
                     </div>
                     </div>
                 </span>

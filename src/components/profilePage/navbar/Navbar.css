@@ -97,3 +97,7 @@ nav {
       display: none;
   }
 }
+
+.logout_icon {
+  margin-right: 10px;
+}

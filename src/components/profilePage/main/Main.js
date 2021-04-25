@@ -5,11 +5,19 @@ import './Main.css';
 
 export default class Main extends React.Component {
 
-     // handleChange(e){
-    //     const x = document.createElement("INPUT");
-    //     x.setAttribute("type","file");
-    //     document.body.appendChild(x);
-    // }
+    constructor(props) {
+        super(props)
+        this.state = {
+            file: null
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({
+            file: URL.createObjectURL(event.target.files[0])
+        })
+    }
 
     render() {
         return(
@@ -19,7 +27,9 @@ export default class Main extends React.Component {
                     <div className="card">
                         <h2>Profile</h2>
                         <img src={propic}  alt="profilePic" />
-                        <input type="file" />
+                        
+                        <input type="file" onChange={this.handleChange}/>
+                        <img src={this.state.file} />
                         <div>
                             <div>
                                 <h4><b>John Doe</b></h4> 

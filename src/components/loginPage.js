@@ -7,7 +7,6 @@ import  fbHelper  from "../cofig/FireBaseHelper";
 export default class loginPage extends React.Component {
 
   constructor(props){
-
     super(props);
      this.state = {
        isDisabled:true
@@ -30,12 +29,10 @@ export default class loginPage extends React.Component {
     }
   }
 
-
   handleChange(e){
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
     this.setState({
       [name]: value
     });
@@ -70,19 +67,20 @@ export default class loginPage extends React.Component {
       
       fbHelper.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((user)=>{
         console.log(user);
-      }).catch((err)=>{
-        
+      })
+      
+      .catch((err)=>{ 
         console.log(err);
       })
     }
    
-
   }
 
     render() {
         return(
           
             <div className="form__body">
+
               <form className="form">
                   <h1 className="form__title">Login Page</h1>
 
@@ -91,8 +89,7 @@ export default class loginPage extends React.Component {
                     <label for="email" className="form__label">Email</label>
                     <br />
                     <br />
-                    {this.state.emailError ? <span style={{color: "red",fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>    Please Enter valid email address</span> : ''}
-
+                    {this.state.emailError ? <span style={{color: "red",fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>  Please Enter valid email address</span> : ''}
                   </div>
                   
                   <div className="form__div">
@@ -100,12 +97,13 @@ export default class loginPage extends React.Component {
                     <label for="password" className="form__label">Password</label>
                     <br />
                     <br />
-                    {this.state.passwordError ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>    Value should be above 6</span> : ''}
-
+                    {this.state.passwordError ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}>  Value should be above 6</span> : ''}
                   </div>  
+
                   {this.state.loginErr ? <span style={{color: "red", fontSize:12 ,marginLeft: 5.0, fontWeight:"bold"}}> Invalid Credentials</span> : ''}
                   <button className="form__button" onClick={this.submitForm}>Login</button>
-                  <p>Not a user??<Link to={"/signup"}>Sign up </Link></p>    
+                  <p>Not a user??<Link to={"/signup"}>Sign up </Link></p>  
+
               </form>
 
             </div>
