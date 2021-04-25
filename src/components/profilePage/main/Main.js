@@ -30,12 +30,19 @@ export default class Main extends React.Component {
                         
                         <input type="file" onChange={this.handleChange}/>
                         <img src={this.state.file} />
+                        <img className="propic" src={propic}  alt="profilePic" height="200px"/>
                         <div>
+                        <input type="file" />
+
+                        </div>
+                        <div>
+                    
                             <div>
+                                
                                 <h4><b>John Doe</b></h4> 
                             </div>  
                             <div>
-                                <p>Software Engineer</p> 
+                                <p>Employee</p> 
                             </div>  
                             <p>email@gmail.com</p>
                         <button className="button_decor">Edit Profile</button>
