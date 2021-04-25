@@ -9,12 +9,21 @@ const Sidebar = () => {
     return(
         <sidebar className="sidebar">
             <div className="content">
-                <p className="icon_decor"><FontAwesomeIcon icon={faFile}  /></p>
-                <div><a href="#">My Task</a></div>
-                <p className="icon_decor"><FontAwesomeIcon icon={faNewspaper}  /></p>
-                <div><a href ="#">View Task</a></div>
-                <p className="icon_decor"><FontAwesomeIcon icon={faPenSquare}  /></p>
-                <div><Link to={"/reportTask"}>Report Issue</Link></div>
+               
+                <div className="divbar">
+                <FontAwesomeIcon className="icon_decor" icon={faFile} /><br/>
+                    <a href="#">My Task</a>
+                    </div>
+               
+                <div className="divbar"><FontAwesomeIcon className="icon_decor" icon={faNewspaper}  /><br/><a href ="#">View Task</a></div>
+                
+                <div className="divbar">
+                    <Link className="linke" to={"/reportTask"}>
+                        <FontAwesomeIcon className="icon_decor" icon={faPenSquare}  />
+                        <br/>
+                        Report Issue
+                        </Link>
+                        </div>
 
             </div>
             

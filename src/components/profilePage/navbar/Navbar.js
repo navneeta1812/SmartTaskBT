@@ -41,7 +41,7 @@ export default class Navbar extends React.Component{
                 <span className="color">
                 <div className="dropdown">
                     <FontAwesomeIcon icon={faUser} className="nav_icon"/>
-                    <button className="dropbtn">User Name</button>
+                    <button id="username" className="dropbtn">User Name</button>
                     <div className="dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
                         <a onClick={this.logout}><FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>Log Out</a>
