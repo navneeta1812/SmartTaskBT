@@ -1,6 +1,7 @@
 import React from 'react';
 import "./signUpPage.css";
 import { Link } from "react-router-dom";
+import fbHelper from "../../cofig/FireBaseHelper";
 
 
 export default class signup extends React.Component {
@@ -109,10 +110,17 @@ export default class signup extends React.Component {
         }
 
         // Do signup in firebase/
-        // for login and signup u need email and pass word
+        // for signup u need email and pass word
         if(!this.state.confirmPasswordError && this.state.checkbox){
-            console.log(data);
+           
+            fbHelper.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then((user)=>{
+                //now we have to save the data(fname ,lname ,email,uid) in database
 
+
+            }).catch((err)=>{
+                console.log(err);
+            })
+            
         }
     
     

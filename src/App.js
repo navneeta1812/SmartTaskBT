@@ -33,6 +33,14 @@ export default class App extends React.Component {
 
 
   render() {
+
+    let redirect;
+    if(this.state.user!=null){
+      redirect = <Redirect to="/profile"/>
+    }else{
+      redirect = <Redirect to="/"/>
+    }
+
     return(
       <BrowserRouter>
 
@@ -41,8 +49,7 @@ export default class App extends React.Component {
         <Route exact path="/profile" component={ProfilePage}/>
         <Route exact path="/reportTask" component={ReportTask} />
         {/* <Route exact path="/myTask" component={MyTask}/> */}
-
-        {!this.state.user?<Redirect to="/"/>:<Redirect to="/profile"/>}
+        {redirect}
 
       </BrowserRouter>
 
