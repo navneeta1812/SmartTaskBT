@@ -4,7 +4,9 @@ import loginPage from "./components/loginPage";
 import  ProfilePage  from "./components/profilePage/ProfilePage";
 import signUp from "./components/signUpPage/signUpPage";
 import ReportTask from './components/reportTask/ReportTask';
-import  fbHelper  from "./cofig/FireBaseHelper";
+import fbHelper  from "./cofig/FireBaseHelper";
+import MyTask from "./components/mTask/myTask/MyTask";
+import MyViewTask from './components/viewTask/myViewTask/MyViewTask';
 
 export default class App extends React.Component {
 
@@ -48,7 +50,8 @@ export default class App extends React.Component {
         <Route exact path="/signup" component={signUp}/>
         <Route exact path="/profile" component={ProfilePage}/>
         <Route exact path="/reportTask" component={ReportTask} />
-        {/* <Route exact path="/myTask" component={MyTask}/> */}
+        <Route exact path="/myTask" component={MyTask}/>
+        <Route exact path="/viewTask" component={MyViewTask}/>
         {redirect}
 
       </BrowserRouter>

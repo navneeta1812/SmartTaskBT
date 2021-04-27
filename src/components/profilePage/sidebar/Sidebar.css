@@ -20,6 +20,9 @@
   text-align: center;
 }
 
+.divbar:hover{
+  font-weight: 700;
+}
 
 
 .content > div > a {

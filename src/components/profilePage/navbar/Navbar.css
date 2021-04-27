@@ -31,7 +31,7 @@ nav {
 }
 
 .navbar__right :hover {
-  font-size: 28px;
+  font-weight: 600;
 }
 
 .navbar__right >  a  {
@@ -41,6 +41,16 @@ nav {
   margin-right: 20px;
   text-decoration: none;
 }
+
+.navbar__right >  div  {
+  color: rgb(213, 230, 67);
+  font-size: 18px;
+  padding: 7px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+
 
 .dropbtn {
   background-color: inherit;
@@ -76,7 +86,7 @@ nav {
 
 .dropdown-content a:hover {
   background-color: #ddd;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
 }
 
@@ -84,8 +94,9 @@ nav {
   display: block;
 }
 
-.dropdown:hover .dropbtn {font-weight: 600;
-font-size: 20px;}
+.dropdown:hover .dropbtn {
+  font-weight: 600;
+  font-size: 20px;}
 
 
 @media only screen and (max-width: 978px) {
@@ -100,6 +111,4 @@ font-size: 20px;}
   }
 }
 
-.logout_icon {
-  margin-right: 10px;
-}
+

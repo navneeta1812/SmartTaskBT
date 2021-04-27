@@ -11,19 +11,22 @@ const Sidebar = () => {
             <div className="content">
                
                 <div className="divbar">
-                <FontAwesomeIcon className="icon_decor" icon={faFile} /><br/>
-                    <a href="#">My Task</a>
-                    </div>
+                    <Link to={"/myTask"}>
+                        <FontAwesomeIcon className="icon_decor" icon={faFile} /><br/>
+                        My Task</Link>
+                </div>
                
-                <div className="divbar"><FontAwesomeIcon className="icon_decor" icon={faNewspaper}  /><br/><a href ="#">View Task</a></div>
+                <div className="divbar">
+                    <Link to={"/viewTask"}>
+                        <FontAwesomeIcon className="icon_decor" icon={faNewspaper} /><br/>
+                        View Task</Link>
+                </div>
                 
                 <div className="divbar">
-                    <Link className="linke" to={"/reportTask"}>
-                        <FontAwesomeIcon className="icon_decor" icon={faPenSquare}  />
-                        <br/>
-                        Report Issue
-                        </Link>
-                        </div>
+                    <Link  to={"/reportTask"}>
+                        <FontAwesomeIcon className="icon_decor" icon={faPenSquare} /><br />
+                        Report Issue</Link>
+                </div>
 
             </div>
             

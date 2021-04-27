@@ -17,7 +17,7 @@ export default class Main extends React.Component {
     }
 
     componentDidMount(){
-        fbHelper.auth().onAuthStateChanged(user =>{
+        fbHelper.auth().onAuthStateChanged(user => {
             if(user){
                 this.getUserDetails();
             }
@@ -32,22 +32,19 @@ export default class Main extends React.Component {
         
             if(employee.profile_pic!=undefined ||employee.profile_pic!=undefined ){
                 document.getElementById("propic").src = employee.profile_pic
-
             }
+            
             document.getElementById("name").innerHTML = "Name :"+employee.firstname+" "+employee.lastname
             document.getElementById("email").innerHTML = "Email :"+employee.email
         })
     }
 
-
-     
     handleChange=(files)=> {
         this.setState({
             file: files
         })
         
     }
-
 
     uploadPhotoToDatabase = ()=>{
 
@@ -63,7 +60,7 @@ export default class Main extends React.Component {
                 .update({"profile_pic":url});
         
             }); 
-            }
+    }
         
    
     render() {
@@ -86,17 +83,17 @@ export default class Main extends React.Component {
 
                         </div>
                         <div>
-                    
                             <div>
-                                
                                 <h4 >
                                     <b id="name">Employee name</b>
-                                    </h4> 
+                                </h4> 
                             </div>  
+
                             <div>
                                 <p>Employee</p> 
                             </div>  
-                            <p id="email">employee email</p>
+
+                            <a href="" id="email">employee email</a><br />
                         <button onClick={this.uploadPhotoToDatabase} className="button_decor">Edit Profile</button>
                         <p>Active Task 23</p>
                         <p>Task Completed 103</p>
