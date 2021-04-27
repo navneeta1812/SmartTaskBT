@@ -66,6 +66,12 @@ nav {
   border: none;
 }
 
+.logdiv{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -93,10 +99,14 @@ nav {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.logout_icon{
+  color: #202020;
+  margin-left: 10px;
+}
 .dropdown:hover .dropbtn {
   font-weight: 600;
   font-size: 20px;}
+
 
 
 @media only screen and (max-width: 978px) {

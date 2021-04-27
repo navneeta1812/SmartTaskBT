@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './Navbar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -9,17 +9,20 @@ import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 export default class Navbar extends React.Component{
 
     constructor(props){
-
         super(props);
         this.state={
-            file: null,
+            projectList:[],
         }
     }
+
 
     componentDidMount(){
         fbHelper.auth().onAuthStateChanged(user => {
             if(user){
+                
                 this.getUserDetails();
+
+                this.getProjectList();
             }
         });
     }
@@ -36,13 +39,40 @@ export default class Navbar extends React.Component{
         })
     }
 
+    getProjectList(){
 
+        fbHelper.database().ref("projects").on("value",snap =>{
+            let project=snap.val();
+            let newprojectState = [];
+            snap.forEach(data => {
+                const dataVal = data.val()
+                newprojectState.push({
+                  id: data.id,
+                  name: dataVal.projectName
+                  
+                })
+            })
+            this.setState({projectList:newprojectState})
+
+            this.setProject();
+        })
+
+        
+    
+    }
+       
+    setProject(){
+        document.getElementById("projects").innerHTML = "#"+this.state.projectList[0].name
+    }
+            
 
     logout(){
 
         fbHelper.auth().signOut();
 
     }
+
+
 
 
     render() {
@@ -55,10 +85,12 @@ export default class Navbar extends React.Component{
             <div className="navbar__right">
                 <Link to={"/reportTask"}>Report Task</Link>
                 <div className="dropdown">
-                    <button className="dropbtn">Project</button>
+                    <button id="projects" className="dropbtn">Project</button>
                     <div className="dropdown-content">
-                        <a href="">Link 1</a>
-                        <a href="">Link 2</a>
+                        {
+                        this.state.projectList.map((value)=><a href="#">{value.name}</a>)
+                            }
+
                     </div>
                 </div>
 
@@ -69,9 +101,13 @@ export default class Navbar extends React.Component{
                     <button id="username" className="dropbtn">User Name</button>
                     <div className="dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
-                        <a id="logout" onClick={this.logout}>
-                        <FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>
-                        </a>
+                       
+                       <div className="logdiv">
+                       <FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>
+                        <a id="logout" onClick={this.logout}/>
+                       </div>
+                       
+                        
                     </div>
                 </div>
                 </span>
