@@ -20,8 +20,9 @@
   text-align: center;
 }
 
-.divbar:hover{
+.divbar  :hover  .icon_decor :hover {
   font-weight: 700;
+  font-size: 50px;
 }
 
 
@@ -36,3 +37,17 @@
   font-size: 25px;
   justify-content: center;
 }
+
+.sidebar_decor :hover {
+  font-size: 50px;
+}
+
+.icon_decor :hover {
+  font-size: 50px;
+
+}
+
+/* .divbar :hover {
+  font-size: 50px;
+  text-size-adjust: 0px;
+} */

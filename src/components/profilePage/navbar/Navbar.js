@@ -99,6 +99,7 @@ export default class Navbar extends React.Component{
                 <div className="dropdown">
                     <FontAwesomeIcon icon={faUser} className="nav_icon"/>
                     <button id="username" className="dropbtn">User Name</button>
+
                     <div className="dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
                        
@@ -106,8 +107,7 @@ export default class Navbar extends React.Component{
                        <FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>
                         <a id="logout" onClick={this.logout}/>
                        </div>
-                       
-                        
+                           
                     </div>
                 </div>
                 </span>

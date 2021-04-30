@@ -11,19 +11,19 @@ const Sidebar = () => {
             <div className="content">
                
                 <div className="divbar">
-                    <Link to={"/myTask"}>
+                    <Link to={"/myTask"} className="sidebar_decor" >
                         <FontAwesomeIcon className="icon_decor" icon={faFile} /><br/>
                         My Task</Link>
                 </div>
                
                 <div className="divbar">
-                    <Link to={"/viewTask"}>
+                    <Link to={"/viewTask"} className="sidebar_decor">
                         <FontAwesomeIcon className="icon_decor" icon={faNewspaper} /><br/>
                         View Task</Link>
                 </div>
                 
                 <div className="divbar">
-                    <Link  to={"/reportTask"}>
+                    <Link  to={"/reportTask"} className="sidebar_decor" >
                         <FontAwesomeIcon className="icon_decor" icon={faPenSquare} /><br />
                         Report Issue</Link>
                 </div>

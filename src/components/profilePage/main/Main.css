@@ -3,18 +3,27 @@ main {
   grid-area: main;
   background-color: rgb(250, 244, 244);
   padding: 0 10px 0 10px;
+  justify-content: center;
 }
 
-.main_div {
+/* .main_div {
   display: grid;
   gap: 20px;
   padding: 20px;
   grid-template-columns: 1fr 1fr ;
+} */
+
+.main_heading {  
+  font-family:   'Segoe UI',  
+  'Ubuntu'  ; 
+   font-weight:700 ;
+   color: rgb(213, 230, 67);
 }
+
 
 .button_decor {
   background-color: rgb(213, 230, 67);
-  padding: 10px 45px;
+  padding: 20px;
   border: none;
   font-size: 20px;
   cursor: pointer;
@@ -24,6 +33,7 @@ main {
   transition: .3s;
   font-size: medium;
   outline: none ;
+  margin-top: 30px;
 }
 
 img{
@@ -50,4 +60,24 @@ img{
   border-radius: 20px;
 }
 
+.file_input {
+  display: none;
+}
 
+.icon_decor {
+  margin-top: 15px;
+ 
+}
+
+.emp_name {
+  font-size: 20px;
+  
+}
+
+.email_decor {
+  font-size: 20px;
+}
+
+.icon_hover :hover {
+  font-size: 40px;
+}

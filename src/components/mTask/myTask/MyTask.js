@@ -2,12 +2,13 @@ import React from 'react';
 import './MyTask.css';
 import Navbar from '../../profilePage/navbar/Navbar';
 import Sidebar from '../../profilePage/sidebar/Sidebar';
+import MTmain from '../mtMain/Mtmain';
 
 const Mytask = () => {
   return(
     <div className="container">
       <Navbar />
-      Main page
+      <MTmain />
       <Sidebar />
     </div>
   )

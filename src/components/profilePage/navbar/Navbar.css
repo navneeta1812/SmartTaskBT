@@ -50,8 +50,6 @@ nav {
   text-decoration: none;
 }
 
-
-
 .dropbtn {
   background-color: inherit;
   color: rgb(213, 230, 67);
@@ -66,11 +64,13 @@ nav {
   border: none;
 }
 
-.logdiv{
+.logdiv {
   display: flex;
   position: relative;
   align-items: center;
+  background-color: #f1f1f1;
 }
+
 
 .dropdown-content {
   display: none;
@@ -99,10 +99,16 @@ nav {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .logout_icon{
   color: #202020;
   margin-left: 10px;
 }
+
+.logout_icon :hover {
+  background-color:#f1f1f1;
+}
+
 .dropdown:hover .dropbtn {
   font-weight: 600;
   font-size: 20px;}
