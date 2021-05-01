@@ -3,6 +3,7 @@ import './Navbar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/app_logo.png';
 import fbHelper from "../../../cofig/FireBaseHelper";
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 
@@ -78,8 +79,9 @@ export default class Navbar extends React.Component{
     render() {
         return (
         <nav className="navbar">
-            <div>
-            <h2 className="heading">SmartTask-BT</h2>
+            <div className="div-header">
+                <img  className="logoApp" src={logo} width='45' height='45' alt="logo"></img>
+                <h2 className="heading">SmartTask-BT</h2>
             </div>
             
             <div className="navbar__right">

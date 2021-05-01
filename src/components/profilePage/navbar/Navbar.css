@@ -11,6 +11,7 @@ nav {
 
 .heading{
   color: white;
+  margin-left: 10px;
 }
 
 .color{
@@ -23,6 +24,11 @@ nav {
   padding-right: 0;
 }
 
+.div-header{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
 .navbar__right {
   font-size: 18px;
   display: flex;
@@ -79,6 +85,11 @@ nav {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+.logoApp{
+  border-radius: 15%;
+  box-shadow: 0px 3px 2px 0px #4b4a4a;
 }
 
 .dropdown-content a {
