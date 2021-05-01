@@ -57,7 +57,7 @@ export default class Main extends React.Component {
             uploadTask.then(snap =>{
                 return snap.ref.getDownloadURL();
             }).then(url  => {
-        
+    
                 fbHelper.database().ref("employee").child(fbHelper.auth().currentUser.uid)
                 .update({"profile_pic":url});
         
