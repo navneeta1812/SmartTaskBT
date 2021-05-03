@@ -129,7 +129,7 @@ export default class RTmain extends React.Component {
             this.uploadPhoto();
         }else{
 
-            this.pushDataToFirebase(" ");
+            this.pushDataToFirebase("");
         }
 
     }

@@ -14,12 +14,10 @@ export default class VTmain extends React.Component {
     }
 
     componentDidMount(){
-
         this.getTaskReport();
     }
 
     getTaskReport(){
-
         fbHelper.database().ref("tasks").on("value",snap=>{
             let newTaskState=[];
             snap.forEach(data => {
@@ -61,6 +59,7 @@ export default class VTmain extends React.Component {
                   <p>Project : {task.project}</p>
                   <p>Assinged to {task.assingedTo}</p>
                   <p>Priority : {task.priority}</p>
+                  <button className="button_decorVT">Open Task</button>
                   {/* <p>submitted by {task.submittedBy}</p> */}
     
               </div>
