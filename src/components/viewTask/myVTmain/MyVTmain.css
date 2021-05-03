@@ -1,4 +1,7 @@
 
+.main_div{
+    margin-top: 60px;
+}
 .task_card{
     margin: 10px 10px 10px 10px;
     padding: 10px 10px 10px 10px;
@@ -40,11 +43,7 @@ p{
 .main_div{
     display: grid;
     grid-area: main;
-<<<<<<< HEAD
     grid-template-columns: 1fr 1fr 1fr 1fr ;
-=======
-    grid-template-columns: 1fr 1fr 1fr 1fr;
->>>>>>> 95f85019394c8a393c92e1eb59c216c4eba6e2a9
     gap: 20px;
 
 }
@@ -71,7 +70,7 @@ p{
     border-radius: 4px;
     cursor: pointer;
     transition: .3s;
-    width: 150px;
+    
     height: 40px; 
 
   }

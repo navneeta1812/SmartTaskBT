@@ -23,17 +23,16 @@ export default class MTmain extends React.Component {
       let newTaskState = [];
       snap.forEach (data => {
         const task = data.val()
-        if ( task.assignedID  === fbHelper.auth().currentUser.uid ) {
-
+        if ( task.assinedID  === fbHelper.auth().currentUser.uid ) {
           newTaskState.push ({
             title: task.title,
             description: task.description,
-            assignedTo: task.assignedTo,
-            created: task.created_AT,
+            assingedTo: task.assingedTo,
+            created: task.created_At,
             url: task.imageUrl,
             project: task.project,
             priority: task.priority,
-            assignedID: task.assignedID,
+            assignedID: task.assinedID,
             submittedBy: task.editor_ID
              
           })
@@ -53,23 +52,23 @@ export default class MTmain extends React.Component {
       <div className="search">
         <label for="search"></label>
         <input type="text" id="search" placeholder="Search Issue Id/Task Id" className="search_input" />
-        <button className="search_button"> <FontAwesomeIcon icon={faSearch}  id="search" className="search_icon" /></button>
+        <button className="search_button"> <FontAwesomeIcon icon={faSearch}  id="search" className="search_icon" /> <strong>Search</strong></button>
       </div>
       <br/><br/><br/>
       { this.state.taskList.length > 0 ? this.state.taskList.map((task) => 
-        <table className="MT_table">
-        <th>My Task</th>
-        <tr>
-          <td>{task.title}</td>
-          <td>{task.description}</td>
-          <td>{ task.url.length > 1 ? <img width="150" height="100" src={task.url}></img> : '' }</td>
-          <td>Created at {task.created}</td>
-          <td>Project : {task.project}</td>
-          <td>Assinged to {task.assingedTo}</td>
-          <td>Priority : {task.priority}</td>
-        </tr>
-        
-        </table>
+        <div className="task_card">
+        <h4>{task.title}</h4>
+        <h5>{task.description}</h5>
+        {
+           task.url.length>1?<img className="task_img" width="150" height = "100" src={task.url}></img>:''
+        }
+        <p>Created at: <strong> {task.created.slice(0,17)}</strong></p>
+        <p>Project :<strong>{task.project}</strong> </p>
+        <p>Priority : <strong>{task.priority}</strong></p>
+        <button className="button_decorVT">Task Complete!</button>
+        {/* <p>submitted by {task.submittedBy}</p> */}
+
+    </div>
       ) :
 
       <h3> No Task Yet</h3>

@@ -1,11 +1,8 @@
 
-.RT_main {
-  display: block;
-  grid-area: main ;
-  background-color: rgb(250, 244, 244);
-  padding: 20px 20px 0 20px;
+.RT_main{
+  margin-top: 60px;
+  background-color: white;
 }
-
 
 .RT_table{
   border:1px solid #bdc3c7 ;
