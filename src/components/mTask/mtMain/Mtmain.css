@@ -1,0 +1,47 @@
+.MT_main{
+  grid-area: main;
+
+}
+
+.search {
+  margin-top: 15px;
+  position: absolute;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.search_input {
+  border: 2px solid rgb(160, 159, 159);
+  height: 40px;
+  width: 1000px ;
+  border-radius: 20px;
+  text-align: center;
+  outline: none;
+ 
+}
+
+.search_button {
+  outline: none;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(213, 230, 67);
+  border: none;
+  border-radius: 20px;
+  position: absolute;
+  right: 0;
+
+  
+}
+
+.search_icon {
+  font-size: 20px ;
+}
+
+.MT_table {
+  height: 600px;
+  width: 400px;
+}

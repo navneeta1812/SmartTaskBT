@@ -16,7 +16,6 @@ export default class Navbar extends React.Component{
         }
     }
 
-
     componentDidMount(){
         fbHelper.auth().onAuthStateChanged(user => {
             if(user){
@@ -33,9 +32,9 @@ export default class Navbar extends React.Component{
         fbHelper.database().ref("employee").child(fbHelper.auth().currentUser.uid).on("value",snapshot => {
            
             let employee = snapshot.val();
-            document.getElementById("username").innerHTML = 
+                document.getElementById("username").innerHTML = 
             employee.firstname+" "+employee.lastname
-            document.getElementById("logout").innerHTML = 
+                document.getElementById("logout").innerHTML = 
             "Logout("+employee.firstname[0]+employee.lastname[0]+")"
         })
     }
@@ -43,7 +42,7 @@ export default class Navbar extends React.Component{
     getProjectList(){
 
         fbHelper.database().ref("projects").on("value",snap =>{
-            let project=snap.val();
+            
             let newprojectState = [];
             snap.forEach(data => {
                 const dataVal = data.val()
@@ -57,20 +56,14 @@ export default class Navbar extends React.Component{
 
             this.setProject();
         })
-
-        
-    
     }
        
     setProject(){
         document.getElementById("projects").innerHTML = "#"+this.state.projectList[0].name
     }
             
-
     logout(){
-
         fbHelper.auth().signOut();
-
     }
 
 

@@ -36,10 +36,10 @@ export default class VTmain extends React.Component {
                 })
             })
 
-            this.setState({
-                taskList:newTaskState
-            })
-        })
+          this.setState({
+              taskList:newTaskState
+          })
+      })
 
     }
 

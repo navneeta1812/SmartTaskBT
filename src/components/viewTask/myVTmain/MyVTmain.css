@@ -40,7 +40,11 @@ p{
 .main_div{
     display: grid;
     grid-area: main;
+<<<<<<< HEAD
     grid-template-columns: 1fr 1fr 1fr 1fr ;
+=======
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+>>>>>>> 95f85019394c8a393c92e1eb59c216c4eba6e2a9
     gap: 20px;
 
 }

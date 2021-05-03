@@ -142,9 +142,9 @@ export default class RTmain extends React.Component {
         }
 
         return(
-            <main>
-                <table>
-                    <th>Enter Issue Details</th>
+            <main className="RT_main">
+                <table className="RT_table">
+                    <th className="RT_th">Enter Issue Details</th>
                     <tr>
                         <td className="TD_left">Project</td>
                         <td className="right_dropdown"> 
