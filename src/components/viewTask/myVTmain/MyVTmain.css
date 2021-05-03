@@ -40,8 +40,9 @@ p{
 
 .main_div{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    gap: 35px;
+    grid-area: main;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
 
 }
 
