@@ -1,5 +1,4 @@
 import React from 'react';
-import './ProfilePage.css';
 import Navbar from "./navbar/Navbar.js"; 
 import Main from "./main/Main.js";
 import Sidebar from './sidebar/Sidebar.js';

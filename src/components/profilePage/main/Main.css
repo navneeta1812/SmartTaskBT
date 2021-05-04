@@ -1,23 +1,19 @@
 
-main {
+.PP_main {
   grid-area: main;
   background-color: rgb(250, 244, 244);
   padding: 0 10px 0 10px;
-  justify-content: center;
+ 
 }
 
-/* .main_div {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  grid-template-columns: 1fr 1fr ;
-} */
+
 
 .main_heading {  
   font-family:   'Segoe UI',  
   'Ubuntu'  ; 
    font-weight:700 ;
    color: rgb(213, 230, 67);
+   margin-top: 30px;
 }
 
 
@@ -36,7 +32,7 @@ main {
   margin-top: 30px;
 }
 
-img{
+.PP_img{
   border-radius: 50%;
   box-shadow: 3px 3px 3px 3px rgba(153, 142, 142, 0.2);
 }
@@ -64,8 +60,11 @@ img{
   display: none;
 }
 
-.icon_decor {
-  margin-top: 15px;
+
+.PP_icon {
+  margin-top: 30px;
+  font-size: 30px;
+  color: rgb(213, 230, 67) ;
  
 }
 
@@ -74,10 +73,19 @@ img{
   
 }
 
-.email_decor {
+.PP_email {
   font-size: 20px;
+  text-decoration: none;
 }
+
 
 .icon_hover :hover {
   font-size: 40px;
+}
+
+.PP_loading {
+  background: transparent;
+  padding: 35vh 0;
+  text-align: center;
+  
 }

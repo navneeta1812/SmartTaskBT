@@ -4,7 +4,7 @@
   background-color: white;
 }
 
-.search {
+.MT_search {
   margin-top: 15px;
   text-align: center;
   display: flex;
@@ -14,7 +14,7 @@
 
 }
 
-.search_input {
+.MT_search_input {
   border: 1.5px solid rgb(160, 159, 159);
   height: 40px;
   box-shadow: 2px 2px 6px 0px gainsboro;
@@ -27,7 +27,7 @@
   font-family:  Verdana;
 }
 
-.search_button {
+.MT_search_button {
   outline: none;
   height: 39.5px;
   width: 120px;
@@ -40,6 +40,49 @@
   padding-left: 10px;
 }
 
-.search_icon {
+.MT_search_icon {
   font-size: 16px ;
+}
+
+.MT_task_card{
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  box-shadow:2px 4px 4px 0px #ddd;
+  display: block;
+  border-radius: 8px;
+  background-color: beige;
+}
+
+.MT_task_img{
+  border-radius: 4px;
+}
+
+.MT_task_card > h4 {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 0px;
+}
+
+.MT_task_card > h5 {
+  margin-top: 1px;
+  text-align: center;
+  font-size: 15px;
+  color:#161616;
+  font-weight: 600;
+}
+
+.MT_task_card > p{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: rgb(31, 24, 24);
+}
+
+.MT_task_card > img {
+  box-shadow: 0px 2px 2px 2px #ddd;
+  justify-items: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
 }

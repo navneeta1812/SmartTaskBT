@@ -49,18 +49,18 @@ export default class MTmain extends React.Component {
   render(){
     return(
       <main className="MT_main">
-      <div className="search">
+      <div className="MT_search">
         <label for="search"></label>
-        <input type="text" id="search" placeholder="Search Issue Id/Task Id" className="search_input" />
-        <button className="search_button"> <FontAwesomeIcon icon={faSearch}  id="search" className="search_icon" /> <strong>Search</strong></button>
+        <input type="text" id="search" placeholder="Search Issue Id/Task Id" className="MT_search_input" />
+        <button className="MT_search_button"> <FontAwesomeIcon icon={faSearch}  id="search" className="MT_search_icon" /> <strong>Search</strong></button>
       </div>
       <br/><br/><br/>
       { this.state.taskList.length > 0 ? this.state.taskList.map((task) => 
-        <div className="task_card">
-        <h4>{task.title}</h4>
-        <h5>{task.description}</h5>
+        <div className="MT_task_card">
+        <h4 >{task.title}</h4>
+        <h5 >{task.description}</h5>
         {
-           task.url.length>1?<img className="task_img" width="150" height = "100" src={task.url}></img>:''
+           task.url.length>1?<img className="MT_task_img" width="150" height = "100" src={task.url}></img>:''
         }
         <p>Created at: <strong> {task.created.slice(0,17)}</strong></p>
         <p>Project :<strong>{task.project}</strong> </p>
