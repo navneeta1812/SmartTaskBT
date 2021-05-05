@@ -143,13 +143,13 @@ export default class RTmain extends React.Component {
 
         return(
             <main className="RT_main">
-                <table className="RT_table">
-                    <th className="RT_th">Enter Issue Details</th>
+                <table className="RT_table Rtable">
+                    <th className="RT_th Rth">Enter Issue Details</th>
                     <tr>
-                        <td className="TD_left">Project</td>
-                        <td className="right_dropdown"> 
+                        <td className="RT_TD_left Rtd">Project</td>
+                        <td className="RT_right_dropdown Rtd"> 
                             <label for="project"></label>
-                            <select name="project" id="project"  className="right_dropdown">
+                            <select name="project" id="project"  className="RT_right_dropdown">
                                 {
                                     this.state.projectList.map((value)=>
                                         <option value={value.name} selected>{value.name}</option>)
@@ -159,10 +159,10 @@ export default class RTmain extends React.Component {
                     </tr>
 
                     <tr>
-                        <td className="TD_left">Priority</td>
-                        <td className="right_dropdown" >
+                        <td className="RT_TD_left Rtd">Priority</td>
+                        <td className="RT_right_dropdown Rtd" >
                             <lable for="priority"></lable>
-                            <select name="priority" id="priority" className="right_dropdown">
+                            <select name="priority" id="priority" className="RT_right_dropdown">
                             <option value="normal">Normal</option>
                                 <option value="veryUrgent">Very Urgent</option>
                                 <option value="urgent">Urgent</option>
@@ -171,10 +171,10 @@ export default class RTmain extends React.Component {
                     </tr>
 
                     <tr>
-                        <td className="TD_left">Assign To</td>
-                        <td className="right_dropdown" >
+                        <td className="RT_TD_left Rtd">Assign To</td>
+                        <td className="RT_right_dropdown Rtd" >
                             <lable for="employee"></lable>
-                            <select name="employee" id="employee" className="right_dropdown">
+                            <select name="employee" id="employee" className="RT_right_dropdown">
                                 {
                                     this.state.userList.map((value)=>
                                     <option value={value.name} selected>{value.name}</option>)
@@ -184,28 +184,28 @@ export default class RTmain extends React.Component {
                     </tr>
 
                     <tr>
-                        <td className="TD_left">Title</td>
-                        <td ><textarea id="title" value={this.state.title} name="title" className="textarea" placeholder="Enter Task"
+                        <td className="RT_TD_left Rtd">Title</td>
+                        <td className="Rtd" ><textarea id="title" value={this.state.title} name="title" className="RT_textarea" placeholder="Enter Task"
                         onChange={(e)=>{this.handleChange(e)}}/></td>
                     </tr>
 
                     <tr>
-                        <td className="TD_left">Description</td>
-                        <td  ><textarea id="description" value={this.state.description} name="description" className="textarea" placeholder="Describe the Task"
+                        <td className="RT_TD_left Rtd">Description</td>
+                        <td className="Rtd" ><textarea id="description" value={this.state.description} name="description" className="RT_textarea" placeholder="Describe the Task"
                          onChange={(e)=>{this.handleChange(e)}}/></td>
                     </tr>
 
                     <tr>
-                        <td className="TD_left" >Upload files</td>
-                        <td align="center">
-                            <h5 id="file_name" className="image_tag">No File choosen</h5>
-                            <label for="input" className="label">Choose a File</label>
-                            <input type="file"   id="input" className="input_file" onChange={(e)=>{this.handleFileChange(e.target.files)}}/></td>
+                        <td className="RT_TD_left Rtd" >Upload files</td>
+                        <td className="Rtd" align="center">
+                            <h5 id="file_name" >No File choosen</h5>
+                            <label for="input" className="RT_label">Choose a File</label>
+                            <input type="file"   id="input" className="RT_input_file RT_input" onChange={(e)=>{this.handleFileChange(e.target.files)}}/></td>
                     </tr>
 
                 </table>
 
-                <button className="RTbutton_decor" onClick={this.submitTask}>Submit</button>
+                <button className="RT_button_decor" onClick={this.submitTask}>Submit</button>
             </main>
     
         );
