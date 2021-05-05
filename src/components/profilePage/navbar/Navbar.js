@@ -52,16 +52,14 @@ export default class Navbar extends React.Component{
                   
                 })
             })
+            document.getElementById("projects").innerHTML = "#"+newprojectState[0].name
+
             this.setState({projectList:newprojectState})
 
-            this.setProject();
         })
     }
        
-    setProject(){
-        document.getElementById("projects").innerHTML = "#"+this.state.projectList[0].name
-    }
-            
+       
     logout(){
         fbHelper.auth().signOut();
     }

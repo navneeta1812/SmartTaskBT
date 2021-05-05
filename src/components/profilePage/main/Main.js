@@ -97,22 +97,11 @@ export default class Main extends React.Component {
 
                             <a href="" id="email" className="PP_email">employee email</a><br />
                             <button onClick={this.uploadPhotoToDatabase} className="button_decor">Update Profile</button>
-                            {/* <p>Active Task 23</p>
-                            <p>Task Completed 103</p> */}
+                           
                         </div> 
                     </div> 
                 
-                    
-                    {/* <div className="card3">
-                        <h3>Assigned Project</h3>
-                        <p>Project Name</p>
-                        <p>Recent Issue</p>
-                    </div> */}
-    
-                    {/* <div className="card4">
-                        <h3>Task History</h3>
-                        <textarea />
-                    </div> */}
+            
                     
                 </div>  
                 :
