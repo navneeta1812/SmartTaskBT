@@ -28,6 +28,7 @@ export default class VTmain extends React.Component {
             snap.forEach(data => {
                 const task = data.val()
                 newTaskState.push({
+                  id:data.key,
                   title: task.title,
                   description: task.description,
                   assingedTo:task.assingedTo,
@@ -69,15 +70,13 @@ export default class VTmain extends React.Component {
                     <p>Project :<strong> {task.project}</strong></p>
                     <p>Assinged to <strong>{task.assingedTo}</strong></p>
                     <p>Priority : <strong>{task.priority}</strong></p>
-                    <button className="button_decorVT">Open Task</button>
+                    <button className="button_decorVT">View Task</button>
                     {/* <p>submitted by {task.submittedBy}</p> */}
       
                   </div>
               )  : 
-              <div className="PP_loading">
-              <img src={loader} /><br/>
-              <h4>loading......</h4> 
-            </div>
+              <h3> No Task Yet</h3>
+
               }
             
           </main>  

@@ -79,6 +79,7 @@ nav {
 .logdiv {
   display: flex;
   position: relative;
+  cursor: pointer;
   align-items: center;
   background-color: #f1f1f1;
 }
