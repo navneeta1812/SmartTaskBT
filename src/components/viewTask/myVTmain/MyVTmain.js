@@ -43,7 +43,6 @@ export default class VTmain extends React.Component {
 
     }
 
-
     render(){
         return (
           <div className="main_div">
@@ -55,9 +54,9 @@ export default class VTmain extends React.Component {
                   {
                      task.url.length>1?<img className="task_img" width="150" height = "100" src={task.url}></img>:''
                   }
-                  <p>Created at {task.created}</p>
-                  <p>Project : {task.project}</p>
-                  <p>Assinged to {task.assingedTo}</p>
+                 <p>Created at: <strong> {task.created.slice(0,16)}</strong></p>
+                <p>Project :<strong>{task.project}</strong> </p>
+                <p>Priority : <strong>{task.priority}</strong></p>
                   <p>Priority : {task.priority}</p>
                   <button className="button_decorVT">Open Task</button>
                   {/* <p>submitted by {task.submittedBy}</p> */}
