@@ -1,7 +1,8 @@
 import React from 'react';
 import  "./MyVTmain.css";
-import fbHelper from "../../../cofig/FireBaseHelper";
+import fbHelper from "../../../cofig/FireBaseHelper"
 import loader from '../../../assets/loadergif.gif'
+import { Link } from 'react-router-dom'
 
 
 export default class VTmain extends React.Component {
@@ -70,7 +71,7 @@ export default class VTmain extends React.Component {
                     <p>Project :<strong> {task.project}</strong></p>
                     <p>Assinged to <strong>{task.assingedTo}</strong></p>
                     <p>Priority : <strong>{task.priority}</strong></p>
-                    <button className="button_decorVT">View Task</button>
+                    <Link to={"/taskPage"} className="VT_link"><button className="button_decorVT">View Task</button></Link>
                     {/* <p>submitted by {task.submittedBy}</p> */}
       
                   </div>

@@ -7,6 +7,7 @@ import ReportTask from './components/reportTask/ReportTask';
 import fbHelper  from "./cofig/FireBaseHelper";
 import MyTask from "./components/mTask/myTask/MyTask";
 import MyViewTask from './components/viewTask/myViewTask/MyViewTask';
+import Task from './components/task/Task'
 
 export default class App extends React.Component {
 
@@ -52,6 +53,7 @@ export default class App extends React.Component {
         <Route exact path="/reportTask" component={ReportTask} />
         <Route exact path="/myTask" component={MyTask}/>
         <Route exact path="/viewTask" component={MyViewTask}/>
+        <Route exact path="/taskPage" component={Task} />
         {redirect}
 
       </BrowserRouter>

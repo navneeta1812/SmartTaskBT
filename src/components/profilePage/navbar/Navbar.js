@@ -90,7 +90,6 @@ export default class Navbar extends React.Component{
                         {
                         this.state.projectList.map((value)=><a href="#">{value.name}</a>)
                             }
-
                     </div>
                 </div>
 

@@ -163,7 +163,7 @@ export default class RTmain extends React.Component {
                         <td className="RT_right_dropdown Rtd" >
                             <lable for="priority"></lable>
                             <select name="priority" id="priority" className="RT_right_dropdown">
-                            <option value="normal">Normal</option>
+                                <option value="normal">Normal</option>
                                 <option value="veryUrgent">Very Urgent</option>
                                 <option value="urgent">Urgent</option>
                             </select>
