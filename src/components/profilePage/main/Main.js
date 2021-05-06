@@ -4,7 +4,7 @@ import propic from '../../../assets/profilepic.jpg'
 import fbHelper from '../../../cofig/FireBaseHelper'
 import './Main.css'
 import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
-import loader from '../../../assets/Circle-Loading.svg'
+import loader from '../../../assets/loadergif.gif'
 
 
 export default class Main extends React.Component {
@@ -14,7 +14,8 @@ export default class Main extends React.Component {
         
         this.state = {
             file: null,
-            isLoading : true
+            isLoading : true,
+            employee:null
            
         }
         this.handleChange = this.handleChange.bind(this);
@@ -33,15 +34,8 @@ export default class Main extends React.Component {
         fbHelper.database().ref("employee").child(fbHelper.auth().currentUser.uid).on("value",snapshot=>{
             
             let employee = snapshot.val();
-            this.setState({isLoading:false})
-        
-            if(employee.profile_pic!=undefined ||employee.profile_pic!=undefined ){
-                document.getElementById("propic").src = employee.profile_pic
-            }
-            
-            document.getElementById("name").innerHTML = "Name :"+employee.firstname+" "+employee.lastname
-            document.getElementById("email").innerHTML = "Email :"+employee.email
-            
+            this.setState({isLoading:false,employee:employee})
+          
         })
     }
 
@@ -81,7 +75,11 @@ export default class Main extends React.Component {
                 <div className="PP_div"> 
                     <div className="card">
                         <h1 className="main_heading">Profile Page</h1>
-                        <img id="propic" className="propic" src={propic}  alt="profilePic" width="200px" height="200px" className="PP_img" />
+                        <img id="propic" className="propic" src=
+                        {
+                            this.state.employee!=null && this.state.employee.profile_pic!=undefined?
+                            this.state.employee.profile_pic:propic
+                        }  alt="profilePic" width="200px" height="200px" className="PP_img" />
 
                         <div className="icon_hover">
                             <label for="fileInput">
@@ -91,11 +89,21 @@ export default class Main extends React.Component {
                         </div>
 
                         <div className=" ">
-                            <div className="emp_name" ><h4><b id="name">Employee name</b></h4></div>  
+                            <div className="emp_name" ><h4><b id="name">
+                                {
+                                    this.state.employee!=null?this.state.employee.firstname+" "+this.state.employee.lastname
+                                    :''
+                                }
+                                </b></h4></div>  
 
                             <div><h3>Employee</h3></div>  
 
-                            <a href="" id="email" className="PP_email">employee email</a><br />
+                            <a href="" id="email" className="PP_email">
+                            {
+                                    this.state.employee!=null?this.state.employee.email
+                                    :''
+                                }
+                            </a><br />
                             <button onClick={this.uploadPhotoToDatabase} className="button_decor">Update Profile</button>
                            
                         </div> 
@@ -107,8 +115,8 @@ export default class Main extends React.Component {
                 :
                 <div className="PP_loading">
                     
-                    <img src={loader} /><br/>
-                    <h4>loading......</h4> 
+                    <img src={loader}  width="200" height="200" />
+                    <h4>loading...</h4> 
                 </div>
                  
             }

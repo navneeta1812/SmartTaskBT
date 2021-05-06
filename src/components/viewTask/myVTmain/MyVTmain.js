@@ -1,7 +1,7 @@
 import React from 'react';
 import  "./MyVTmain.css";
 import fbHelper from "../../../cofig/FireBaseHelper";
-import loader from '../../../assets/Circle-Loading.svg'
+import loader from '../../../assets/loadergif.gif'
 
 
 export default class VTmain extends React.Component {
@@ -87,8 +87,8 @@ export default class VTmain extends React.Component {
       else {
         return(
           <div className="PP_loading">
-             <img src={loader} /><br/>
-             <h4>loading......</h4> 
+             <img src={loader} width="200" height="200"/>
+             <h4>loading...</h4> 
           </div>
         );
         

@@ -13,6 +13,7 @@ export default class Navbar extends React.Component{
         super(props);
         this.state={
             projectList:[],
+            userD:null
         }
     }
 
@@ -32,10 +33,13 @@ export default class Navbar extends React.Component{
         fbHelper.database().ref("employee").child(fbHelper.auth().currentUser.uid).on("value",snapshot => {
            
             let employee = snapshot.val();
-                document.getElementById("username").innerHTML = 
-            employee.firstname+" "+employee.lastname
-                document.getElementById("logout").innerHTML = 
-            "Logout("+employee.firstname[0]+employee.lastname[0]+")"
+
+            if(employee!=null){
+                this.setState({
+                    userD:employee
+                })
+            }
+        
         })
     }
 
@@ -52,8 +56,7 @@ export default class Navbar extends React.Component{
                   
                 })
             })
-            document.getElementById("projects").innerHTML = "#"+newprojectState[0].name
-
+           
             this.setState({projectList:newprojectState})
 
         })
@@ -78,7 +81,11 @@ export default class Navbar extends React.Component{
             <div className="navbar__right">
                 <Link to={"/reportTask"}>Report Task</Link>
                 <div className="nav_dropdown">
-                    <button id="projects" className="nav_dropbtn">Project</button>
+                    <button id="projects" className="nav_dropbtn">
+                        {
+                            this.state.projectList.length>0?`#${this.state.projectList[0].name}`:"Project"
+                        }
+                    </button>
                     <div className="nav_dropdown-content">
                         {
                         this.state.projectList.map((value)=><a href="#">{value.name}</a>)
@@ -91,14 +98,22 @@ export default class Navbar extends React.Component{
                 <span className="color">
                 <div className="nav_dropdown">
                     <FontAwesomeIcon icon={faUser} className="nav_icon"/>
-                    <button id="username" className="nav_dropbtn">User Name</button>
+                    <button id="username" className="nav_dropbtn">
+                    {
+                        this.state.userD!=null?this.state.userD.firstname+" "+this.state.userD.lastname:"Name"
+                    }
+                    </button>
 
                     <div className="nav_dropdown-content">
                         <Link to={"/profile"}>Profile Page</Link>
                        
                        <div className="logdiv">
                        <FontAwesomeIcon icon={faPowerOff} className="logout_icon"/>
-                        <a id="logout" onClick={this.logout}/>
+                        <a id="logout" onClick={this.logout}>
+                        {
+                        this.state.userD!=null?"Logout("+this.state.userD.firstname[0]+this.state.userD.lastname[0]+")":"Logout"
+                    }
+                        </a>
                        </div>
                            
                     </div>
