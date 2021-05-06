@@ -1,11 +1,15 @@
 .task_main{
   display: grid;
   grid-area: main;
-  margin: 60px 20px 20px 20px ;
+  margin: 80px 60px 60px 60px ;
+  padding: 0px 40px 40px 40px;
+  box-shadow: 0 10px 25px rgba(92,99,105,.2);
+ 
 }
 
 .task_data {
   font-size: 20px;
+
   
 
 }
@@ -32,13 +36,15 @@
   font-size: 20px;
   padding: 3px;
   text-decoration: none;
+  background-color: #f1f1f1 ;
+  
 
 }
 
 .task_bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 30px;
   
 }
 
@@ -68,9 +74,9 @@
 }
 
 .task_input > button {
-  justify-content: space-between;
+  margin-right: 15px;
 }
 
 .task_select {
-  display:flex
+  display:flex;
 }
