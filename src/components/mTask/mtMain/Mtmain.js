@@ -3,6 +3,7 @@ import React from "react";
 import "./Mtmain.css";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import fbHelper from "../../../cofig/FireBaseHelper";
+import { Link } from 'react-router-dom';
 
 export default class MTmain extends React.Component {
   constructor(props) {
@@ -138,7 +139,10 @@ export default class MTmain extends React.Component {
               <p>
                 Priority : <strong>{task.priority}</strong>
               </p>
+              <Link to={`/taskPage/${task.id}`} className="VT_link">
               <button className="button_decorVT">View Task</button>
+              </Link>
+              
               {/* <p>submitted by {task.submittedBy}</p> */}
             </div>
           ))
