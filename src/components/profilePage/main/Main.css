@@ -1,20 +1,14 @@
-
 .PP_main {
   grid-area: main;
   padding: 0 10px 0 10px;
- 
 }
 
-
-
-.main_heading {  
-  font-family:   'Segoe UI',  
-  'Ubuntu'  ; 
-   font-weight:700 ;
-   color: rgb(213, 230, 67);
-   margin-top: 30px;
+.main_heading {
+  font-family: "Segoe UI", "Ubuntu";
+  font-weight: 700;
+  color: rgb(213, 230, 67);
+  margin-top: 30px;
 }
-
 
 .button_decor {
   background-color: rgb(213, 230, 67);
@@ -25,18 +19,18 @@
   font-weight: 700;
   border-radius: 8px;
   color: rgb(63, 62, 62);
-  transition: .3s;
+  transition: 0.3s;
   font-size: medium;
-  outline: none ;
+  outline: none;
   margin-top: 30px;
 }
 
-.PP_img{
+.PP_img {
   border-radius: 50%;
   box-shadow: 3px 3px 3px 3px rgba(153, 142, 142, 0.2);
 }
 
-.card{
+.card {
   box-sizing: border-box;
   text-align: center;
 }
@@ -59,24 +53,20 @@
   display: none;
 }
 
-
 .PP_icon {
   margin-top: 30px;
   font-size: 30px;
-  color: rgb(213, 230, 67) ;
- 
+  color: rgb(213, 230, 67);
 }
 
 .emp_name {
   font-size: 20px;
-  
 }
 
 .PP_email {
   font-size: 20px;
   text-decoration: none;
 }
-
 
 .icon_hover :hover {
   font-size: 40px;
@@ -85,5 +75,4 @@
 .PP_loading {
   padding: 35vh 0;
   text-align: center;
-  
 }

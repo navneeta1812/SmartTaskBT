@@ -1,4 +1,4 @@
-.MT_main{
+.MT_main {
   grid-area: main;
   margin-top: 60px;
   background-color: white;
@@ -11,20 +11,19 @@
   width: 50%;
   margin-right: auto;
   margin-left: auto;
-
 }
 
 .MT_search_input {
   border: 1.5px solid rgb(160, 159, 159);
   height: 40px;
   box-shadow: 2px 2px 6px 0px gainsboro;
-  width: 100% ;
+  width: 100%;
   border-radius: 20px;
   text-align: center;
   outline: none;
   font-size: 17px;
   font-weight: 500;
-  font-family:  Verdana;
+  font-family: Verdana;
 }
 
 .MT_search_button {
@@ -41,19 +40,19 @@
 }
 
 .MT_search_icon {
-  font-size: 16px ;
+  font-size: 16px;
 }
 
-.MT_task_card{
+.MT_task_card {
   margin: 10px 10px 10px 10px;
   padding: 10px 10px 10px 10px;
-  box-shadow:2px 4px 4px 0px #ddd;
+  box-shadow: 2px 4px 4px 0px #ddd;
   display: block;
   border-radius: 8px;
   background-color: beige;
 }
 
-.MT_task_img{
+.MT_task_img {
   border-radius: 4px;
 }
 
@@ -68,11 +67,11 @@
   margin-top: 1px;
   text-align: center;
   font-size: 15px;
-  color:#161616;
+  color: #161616;
   font-weight: 600;
 }
 
-.MT_task_card > p{
+.MT_task_card > p {
   text-align: center;
   font-weight: 600;
   margin-bottom: 0px;
@@ -84,5 +83,5 @@
   justify-items: center;
   display: block;
   margin-left: auto;
-  margin-right: auto 
+  margin-right: auto;
 }

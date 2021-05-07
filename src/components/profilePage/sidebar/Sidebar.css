@@ -1,7 +1,7 @@
-.sidebar{
+.sidebar {
   margin-top: 60px;
   grid-area: sidebar;
-  background-color:  rgb(213, 230, 67);
+  background-color: rgb(213, 230, 67);
   overflow: auto;
   height: 100%;
   padding: 15px;
@@ -11,22 +11,21 @@
 
 .content {
   margin-top: 50px;
-} 
+}
 
 .content > div {
   align-content: center;
   padding: 20px;
 }
 
-.divbar{
+.divbar {
   text-align: center;
 }
 
-.divbar  :hover  .icon_decor :hover {
+.divbar :hover .icon_decor :hover {
   font-weight: 700;
   font-size: 50px;
 }
-
 
 .content > div > a {
   text-decoration: none;
@@ -46,7 +45,6 @@
 
 .icon_decor :hover {
   font-size: 50px;
-
 }
 
 /* .divbar :hover {

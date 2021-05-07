@@ -1,17 +1,15 @@
-import React from 'react';
-import Navbar from "./navbar/Navbar.js"; 
+import React from "react";
+import Navbar from "./navbar/Navbar.js";
 import Main from "./main/Main.js";
-import Sidebar from './sidebar/Sidebar.js';
+import Sidebar from "./sidebar/Sidebar.js";
 
-
- class ProfilePage extends React.Component{
-
+class ProfilePage extends React.Component {
   render() {
-    return ( 
+    return (
       <div className="container">
-        <Navbar  /> 
-         <Main />
-         <Sidebar  />
+        <Navbar />
+        <Main />
+        <Sidebar />
       </div>
     );
   }

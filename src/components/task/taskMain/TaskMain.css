@@ -1,82 +1,110 @@
-.task_main{
+.task_main {
   display: grid;
   grid-area: main;
-  margin: 80px 60px 60px 60px ;
+  margin: 80px 60px 60px 60px;
   padding: 0px 40px 40px 40px;
-  box-shadow: 0 10px 25px rgba(92,99,105,.2);
- 
+  border-radius: 8px;
+  background-color: whitesmoke;
+  box-shadow: 0 6px 9px rgba(92, 99, 105, 0.2);
 }
 
 .task_data {
   font-size: 20px;
+}
 
-  
+.task_data p {
+  font-size: 18px;
+  font-family: noto;
+}
 
+.task_data h2 {
+  margin-bottom: 5px;
+  color: #302f2f;
+}
+
+.task_data h5 {
+  font-family: calicri;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .task_textarea {
   text-align: start;
   width: 500px;
   height: 100px;
-  background:transparent;
+  background: transparent;
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
 
 .task_img {
   float: right;
   top: 70px;
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
+  border-radius: 6px;
+  box-shadow: 0px 7px 7px gainsboro;
+}
+
+.taskselcte {
+  margin-top: 23px;
 }
 
 .task_dropdown {
-  text-align: center;
   font-size: 20px;
-  padding: 3px;
+  padding-left: 3px;
   text-decoration: none;
-  background-color: #f1f1f1 ;
-  
-
 }
 
 .task_bottom {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  
 }
 
-.task_button_decor {
-
+.task_button_decor_discard {
   padding: 3px 5px;
   outline: none;
   text-align: center;
-  border: none;  
-  align-self: center; 
-  background-color: #202020;
+  border: none;
+  align-self: center;
+  background-color: rgb(192, 0, 0);
   font-size: 18px;
-  color:rgb(213, 230, 67);
+  color: whitesmoke;
   font-weight: 700;
   justify-content: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   width: 180px;
   height: 50px;
-
 }
-
+.task_button_decor {
+  padding: 3px 5px;
+  outline: none;
+  text-align: center;
+  border: none;
+  align-self: center;
+  background-color: #202020;
+  font-size: 18px;
+  color: rgb(213, 230, 67);
+  font-weight: 700;
+  justify-content: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 180px;
+  height: 50px;
+}
 
 .task_input {
   justify-content: space-between;
 }
 
 .task_input > button {
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .task_select {
-  display:flex;
+  display: flex;
 }

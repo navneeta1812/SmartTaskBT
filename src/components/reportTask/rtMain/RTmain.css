@@ -1,28 +1,27 @@
-
-.RT_main{
+.RT_main {
   margin-top: 50px;
   background-color: white;
   grid-area: main;
 }
 
-
-.RT_table{
-  border:1px solid #bdc3c7 ;
-  box-shadow: 2px 2px 12px rgba(131, 129, 129, 0.2), -1px -1px 8px rgba(117, 116, 116, 0.2);
+.RT_table {
+  border: 1px solid #bdc3c7;
+  box-shadow: 2px 2px 12px rgba(131, 129, 129, 0.2),
+    -1px -1px 8px rgba(117, 116, 116, 0.2);
   height: 75%;
-  width:90%;
+  width: 90%;
   justify-items: center;
   margin-left: 65px;
 }
 
-
-.Rtable, .Rth, .Rtd {
-  border:1px solid #bdc3c7 ;
+.Rtable,
+.Rth,
+.Rtd {
+  border: 1px solid #bdc3c7;
   border-collapse: collapse;
 }
 
-
-.RT_th{
+.RT_th {
   display: table-caption;
   height: 50px;
   font-size: 20px;
@@ -30,39 +29,35 @@
   background-color: #202020;
   color: rgb(213, 230, 67);
   padding: 10px;
-  
 }
-
 
 .RT_button_decor {
   margin-left: 40%;
   margin-top: 20px;
-  padding: .75rem 2rem;
+  padding: 0.75rem 2rem;
   outline: none;
   display: grid;
   text-align: center;
-  border: none;  
-  align-self: center; 
+  border: none;
+  align-self: center;
   position: relative;
   background-color: #202020;
   font-size: 18px;
-  color:rgb(213, 230, 67);
+  color: rgb(213, 230, 67);
   font-weight: 700;
   justify-content: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
   width: 180px;
   height: 50px;
 }
-
 
 .RT_TD_left {
   text-align: center;
   font-size: 18px;
   font-weight: 500;
 }
-
 
 .RT_right_dropdown {
   text-align: center;
@@ -71,29 +66,25 @@
   text-decoration: none;
 }
 
-
 .RT_textarea {
   text-align: start;
   width: 100%;
   padding-left: 10px;
   height: 99%;
   border: none;
-  background:transparent;
+  background: transparent;
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
 
 .RT_input_file {
   font-size: 20px;
   cursor: pointer;
 }
 
-
-.RT_input[type="file"]{
+.RT_input[type="file"] {
   display: none;
 }
-
 
 .RT_label {
   color: #202020;
@@ -104,4 +95,4 @@
   font-size: 20px;
   padding: 5px 8px;
   border-radius: 5px;
- }
+}
