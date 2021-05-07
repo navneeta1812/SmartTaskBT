@@ -124,7 +124,7 @@ export default class signup extends React.Component {
             .set(employee);
         })
         .catch((err) => {
-          console.log(err);
+          alert(err)
         });
     }
   }

@@ -73,7 +73,8 @@ export default class loginPage extends React.Component {
         })
 
         .catch((err) => {
-          console.log(err);
+          alert("WRONG CREDENTIALS\n"+err);
+          
         });
     }
   }

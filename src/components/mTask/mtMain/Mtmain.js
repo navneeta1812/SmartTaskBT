@@ -87,6 +87,13 @@ export default class MTmain extends React.Component {
     });
   }
 
+
+
+  removeTask(taskID){
+    var ref = fbHelper.database().ref("tasks").child(taskID);
+    ref.remove();
+  }
+
   render() {
     return (
       <main className="MT_main">
@@ -139,15 +146,31 @@ export default class MTmain extends React.Component {
               <p>
                 Priority : <strong>{task.priority}</strong>
               </p>
-              <Link to={`/taskPage/${task.id}`} className="VT_link">
-              <button className="button_decorVT">View Task</button>
-              </Link>
+              {
+                  task.assinedID ===fbHelper.auth().currentUser.uid || task.submittedBy ===fbHelper.auth().currentUser.uid ?
+                  <div>
+                  <Link to={`/taskPage/${task.id}`} className="VT_link">
+                    <button className="button_decorVT">View Task</button>
+                  </Link>
+                  </div>:''
+                }
+
+              <button className="button_remove" onClick={()=>{
+                const confirmBox = window.confirm(
+                  "Do you really want to delete this Task?"
+                )
+                if (confirmBox === true) {
+                  this.removeTask(task.id)
+                }
+              }
+              }>Remove</button>
+
               
               {/* <p>submitted by {task.submittedBy}</p> */}
             </div>
           ))
         ) : (
-          <h3> No Task Yet</h3>
+          <h3 className="h3task"> You have not been assinged any task yet.</h3>
         )}
       </main>
     );
