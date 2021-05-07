@@ -115,6 +115,9 @@ export default class RTmain extends React.Component {
     });
     document.getElementById("file_name").innerHTML = "";
     document.getElementById("input").value = null;
+    alert("Task Submitted Succesfully!");
+
+
   }
 
   //on button click we will call this function

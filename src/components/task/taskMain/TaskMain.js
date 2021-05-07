@@ -33,15 +33,20 @@ export default class TaskMain extends React.Component {
       .on("value", (snapshot) => {
         let taskData = snapshot.val();
 
-        if (taskData.status !== undefined && taskData.notes !== undefined) {
-          this.setState({
-            status: taskData.status,
-            note: taskData.notes,
-          });
-        }
+        if(taskData!=null){
+          if (taskData.status !== undefined && taskData.notes !== undefined) {
+            this.setState({
+              status: taskData.status,
+              note: taskData.notes,
+            });
+          }
 
-        this.setState({ isLoading: false, task: taskData });
-        this.getEditorName(taskData.editor_ID);
+          this.setState({ isLoading: false, task: taskData });
+          this.getEditorName(taskData.editor_ID);
+        }
+       
+
+       
       });
   }
   getEditorName(editorId) {

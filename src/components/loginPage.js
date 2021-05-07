@@ -69,7 +69,7 @@ export default class loginPage extends React.Component {
         .auth()
         .signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((user) => {
-          console.log(user);
+         
         })
 
         .catch((err) => {
