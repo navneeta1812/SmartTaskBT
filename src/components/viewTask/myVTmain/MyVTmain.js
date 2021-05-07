@@ -2,7 +2,10 @@ import React from "react";
 import "./MyVTmain.css";
 import fbHelper from "../../../cofig/FireBaseHelper";
 import loader from "../../../assets/loadergif.gif";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
 
 export default class VTmain extends React.Component {
   constructor(props) {
@@ -10,11 +13,26 @@ export default class VTmain extends React.Component {
     this.state = {
       taskList: [],
       isLoading: true,
+      searchText: ""
     };
+
+    this.searchTask = this.searchTask.bind(this);
+
   }
 
   componentDidMount() {
     this.getTaskReport();
+  }
+
+  handlechange(e) {
+    if (e.target.name === "search") {
+      if (e.target.value.length < 1) {
+        this.getTaskReport();
+      }
+      this.setState({
+        searchText: e.target.value,
+      });
+    }
   }
 
   getTaskReport() {
@@ -47,10 +65,63 @@ export default class VTmain extends React.Component {
       });
   }
 
+
+  searchTask() {
+    var ref = fbHelper.database().ref("tasks");
+    var query = ref.orderByChild("title").startAt(this.state.searchText);
+    query.once("value", (snap) => {
+      let newTaskState = [];
+      snap.forEach((data) => {
+        const task = data.val();
+        newTaskState.push({
+          id: data.key,
+          title: task.title,
+          description: task.description,
+          assingedTo: task.assingedTo,
+          created: task.created_At,
+          url: task.imageUrl,
+          project: task.project,
+          priority: task.priority,
+          assignedID: task.assinedID,
+          submittedBy: task.editor_ID,
+        });
+      });
+      this.setState({
+        taskList: newTaskState,
+      });
+    });
+  }
+
+
   render() {
     if (!this.state.isLoading) {
       return (
-        <main className="VT_main">
+        <main className="MT_main">
+          <div className="MT_search">
+          <label for="search"></label>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            onChange={(e) => {
+              this.handlechange(e);
+            }}
+            placeholder="Search by Title"
+            className="MT_search_input"
+          />
+          <button className="MT_search_button" onClick={this.searchTask}>
+            {" "}
+            <FontAwesomeIcon
+              icon={faSearch}
+              id="search"
+              className="MT_search_icon"
+            />{" "}
+            <strong>Search</strong>
+          </button>
+        </div>
+
+        <div className="VT_main">
+
           {this.state.taskList.length > 0 ? (
             this.state.taskList.map((task) => (
               <div className="VT_task_card">
@@ -93,6 +164,8 @@ export default class VTmain extends React.Component {
           ) : (
             <h3 className="h3task"> No Task Yet</h3>
           )}
+
+        </div>
         </main>
       );
     } else {

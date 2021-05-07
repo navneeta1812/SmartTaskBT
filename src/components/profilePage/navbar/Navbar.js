@@ -79,7 +79,7 @@ export default class Navbar extends React.Component {
         </div>
 
         <div className="navbar__right">
-          <Link to={"/reportTask"}>Report Task</Link>
+          <Link to={"/reportTask"}>Report Issue</Link>
           <div className="nav_dropdown">
             <button id="projects" className="nav_dropbtn">
               {this.state.projectList.length > 0

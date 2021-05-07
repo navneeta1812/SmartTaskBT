@@ -10,26 +10,14 @@ export default class MTmain extends React.Component {
     super(props);
     this.state = {
       taskList: [],
-      searchText: "",
     };
 
-    this.searchTask = this.searchTask.bind(this);
   }
 
   componentDidMount() {
     this.getTaskReport();
   }
 
-  handlechange(e) {
-    if (e.target.name === "search") {
-      if (e.target.value.length < 1) {
-        this.getTaskReport();
-      }
-      this.setState({
-        searchText: e.target.value,
-      });
-    }
-  }
 
   getTaskReport() {
     fbHelper
@@ -61,33 +49,6 @@ export default class MTmain extends React.Component {
       });
   }
 
-  searchTask() {
-    var ref = fbHelper.database().ref("tasks");
-    var query = ref.orderByChild("title").startAt(this.state.searchText);
-    query.once("value", (snap) => {
-      let newTaskState = [];
-      snap.forEach((data) => {
-        const task = data.val();
-        newTaskState.push({
-          id: data.key,
-          title: task.title,
-          description: task.description,
-          assingedTo: task.assingedTo,
-          created: task.created_At,
-          url: task.imageUrl,
-          project: task.project,
-          priority: task.priority,
-          assignedID: task.assinedID,
-          submittedBy: task.editor_ID,
-        });
-      });
-      this.setState({
-        taskList: newTaskState,
-      });
-    });
-  }
-
-
 
   removeTask(taskID){
     var ref = fbHelper.database().ref("tasks").child(taskID);
@@ -97,31 +58,7 @@ export default class MTmain extends React.Component {
   render() {
     return (
       <main className="MT_main">
-        <div className="MT_search">
-          <label for="search"></label>
-          <input
-            type="text"
-            name="search"
-            id="search"
-            onChange={(e) => {
-              this.handlechange(e);
-            }}
-            placeholder="Search by Title"
-            className="MT_search_input"
-          />
-          <button className="MT_search_button" onClick={this.searchTask}>
-            {" "}
-            <FontAwesomeIcon
-              icon={faSearch}
-              id="search"
-              className="MT_search_icon"
-            />{" "}
-            <strong>Search</strong>
-          </button>
-        </div>
-        <br />
-        <br />
-        <br />
+        
         {this.state.taskList.length > 0 ? (
           this.state.taskList.map((task) => (
             <div className="MT_task_card">

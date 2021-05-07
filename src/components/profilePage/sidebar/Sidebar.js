@@ -24,7 +24,7 @@ const Sidebar = () => {
           <Link to={"/viewTask"} className="sidebar_decor">
             <FontAwesomeIcon className="icon_decor" icon={faNewspaper} />
             <br />
-            View Task
+            All Task
           </Link>
         </div>
 
@@ -32,7 +32,7 @@ const Sidebar = () => {
           <Link to={"/reportTask"} className="sidebar_decor">
             <FontAwesomeIcon className="icon_decor" icon={faPenSquare} />
             <br />
-            Report Issue
+            Assign Task
           </Link>
         </div>
       </div>
