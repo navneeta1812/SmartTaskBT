@@ -2,7 +2,7 @@ import React from "react";
 import "./TaskMain.css";
 import fbHelper from "../../../cofig/FireBaseHelper";
 import loader from "../../../assets/loadergif.gif";
-import { Redirect } from 'react-router-dom';
+import { Redirect ,Link } from "react-router-dom";
 
 export default class TaskMain extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class TaskMain extends React.Component {
       note: "",
       assignBack: false,
       status: "",
-      redirect:''
+      redirect: "",
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -33,11 +33,11 @@ export default class TaskMain extends React.Component {
       .on("value", (snapshot) => {
         let taskData = snapshot.val();
 
-        if(taskData.status!==undefined && taskData.notes!== undefined){
+        if (taskData.status !== undefined && taskData.notes !== undefined) {
           this.setState({
-            status:taskData.status,
-            note:taskData.notes
-          })
+            status: taskData.status,
+            note: taskData.notes,
+          });
         }
 
         this.setState({ isLoading: false, task: taskData });
@@ -59,40 +59,34 @@ export default class TaskMain extends React.Component {
   handleChange(e) {
     if (e.target.name === "addnote") {
       this.setState({ note: e.target.value });
-      
     }
-    
+
     if (e.target.name === "status") {
       this.setState({ status: e.target.value });
-    } 
-    
+    }
+
     if (e.target.type === "checkbox") {
       this.setState({ assignBack: e.target.checked });
     }
-
   }
 
   submitTask() {
-    var ref = fbHelper.database().ref('tasks').child(this.props.id);
+    var ref = fbHelper.database().ref("tasks").child(this.props.id);
     var uid = fbHelper.auth().currentUser.uid;
-    if(this.state.assignBack){
+    if (this.state.assignBack) {
       ref.update({
-        status:this.state.status,
-        notes:this.state.note,
-        assinedID:this.state.task.editor_ID,
-        editor_ID:uid
-      })
-
-    }else{
+        status: this.state.status,
+        notes: this.state.note,
+        assinedID: this.state.task.editor_ID,
+        editor_ID: uid,
+      });
+    } else {
       ref.update({
-        status:this.state.status,
-        notes:this.state.note
-      })
-      
-      
+        status: this.state.status,
+        notes: this.state.note,
+      });
     }
-    this.setState({redirect:<Redirect to="/myTask" />})
-
+    this.setState({ redirect: <Redirect to="/myTask" /> });
   }
 
   render() {
@@ -134,17 +128,19 @@ export default class TaskMain extends React.Component {
               </p>
               <p>
                 Status :
-                {
-                  this.state.task.status!==undefined? <strong>{this.state.task.status}</strong>:'_____'
-                }
-                
+                {this.state.task.status !== undefined ? (
+                  <strong>{this.state.task.status}</strong>
+                ) : (
+                  "_____"
+                )}
               </p>
               <p>
                 Notes :
-                {
-                  this.state.task.notes!==undefined? <strong>{this.state.task.notes}</strong>:'______'
-                }
-                
+                {this.state.task.notes !== undefined ? (
+                  <strong>{this.state.task.notes}</strong>
+                ) : (
+                  "______"
+                )}
               </p>
               <p>
                 Submitted by :
@@ -157,7 +153,9 @@ export default class TaskMain extends React.Component {
                 name="addnote"
                 placeholder="Add Notes"
                 className="task_textarea"
-                onChange={(e) => {this.handleChange(e);}}
+                onChange={(e) => {
+                  this.handleChange(e);
+                }}
               ></textarea>
             </div>
 
@@ -170,12 +168,18 @@ export default class TaskMain extends React.Component {
                     for="taskStatus"
                     className="task_dropdown-content"
                   ></label>
-                  <select name="status" className="taskselcte" id="taskStatus" 
-                    onChange={(e) => {this.handleChange(e);}}>
+                  <select
+                    name="status"
+                    className="taskselcte"
+                    id="taskStatus"
+                    onChange={(e) => {
+                      this.handleChange(e);
+                    }}
+                  >
                     <option selected disabled>
                       Choose Task Status
                     </option>
-                    <option value="completed"  className="task_option">
+                    <option value="completed" className="task_option">
                       Completed
                     </option>
                     <option value="working" className="task_option">
@@ -198,7 +202,6 @@ export default class TaskMain extends React.Component {
                       this.handleChange(e);
                     }}
                     type="checkbox"
-                  
                   />
                   <strong>
                     {this.state.editorName
@@ -206,8 +209,13 @@ export default class TaskMain extends React.Component {
                       : ""}
                   </strong>
                 </p>
-                <button className="task_button_decor" onClick={this.submitTask.bind(this)}>Update</button>
-                <button className="task_button_decor_discard">Discard</button>
+                <button
+                  className="task_button_decor"
+                  onClick={this.submitTask.bind(this)}
+                >
+                  Update
+                </button>
+                <Link to={"/myTask/"}><button className="task_button_decor_discard" >Discard</button></Link>
                 <br />
                 <br />
               </div>
