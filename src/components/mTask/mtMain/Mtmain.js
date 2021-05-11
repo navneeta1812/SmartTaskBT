@@ -87,7 +87,7 @@ export default class MTmain extends React.Component {
                   task.assignedID === fbHelper.auth().currentUser.uid || task.submittedBy ===fbHelper.auth().currentUser.uid ?
                   <div>
                   <Link to={`/taskPage/${task.id}`} className="VT_link">
-                    <button className="button_decorVT">View Task</button>
+                    <button className="button_decorMT">View Task</button>
                   </Link>
                   </div>:''
                 }

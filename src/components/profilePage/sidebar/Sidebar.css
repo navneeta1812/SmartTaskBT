@@ -3,6 +3,7 @@
   grid-area: sidebar;
   background-color: rgb(213, 230, 67);
   overflow: auto;
+  width: 20vh;
   height: 100%;
   padding: 15px;
   position: fixed;

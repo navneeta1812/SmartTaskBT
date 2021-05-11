@@ -1,50 +1,13 @@
 .MT_main {
   grid-area: main;
-  margin-top: 70px;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  margin-top: 50px;
   background-color: white;
 }
 
-.MT_search {
-  margin-top: 15px;
-  text-align: center;
-  display: flex;
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.MT_search_input {
-  border: 1.5px solid rgb(160, 159, 159);
-  height: 40px;
-  box-shadow: 2px 2px 6px 0px gainsboro;
-  width: 100%;
-  border-radius: 20px;
-  text-align: center;
-  outline: none;
-  font-size: 17px;
-  font-weight: 500;
-  font-family: Verdana;
-}
-
-.MT_search_button {
-  outline: none;
-  height: 39.5px;
-  width: 120px;
-  background-color: rgb(213, 230, 67);
-  border: none;
-  border-radius: 20px;
-  margin-left: -120.3px;
-  cursor: pointer;
-  text-align: center;
-  padding-left: 10px;
-}
-
-.MT_search_icon {
-  font-size: 16px;
-}
-
 .MT_task_card {
-  margin: 10px 10px 10px 10px;
+  margin-left: auto;
   padding: 10px 10px 10px 10px;
   box-shadow: 2px 4px 4px 0px #ddd;
   display: block;
@@ -88,6 +51,28 @@
 .h3task{
   text-align: center;
   color: rgb(80, 77, 77);
+}
+
+
+.button_decorMT {
+  margin-top: 25px;
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #202020;
+  box-shadow: lightgray;
+  font-size: 15px;
+  color: rgb(213, 230, 67);
+  font-weight: 500;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 40px;
 }
 
 .button_remove{

@@ -1,6 +1,8 @@
 .PP_main {
   grid-area: main;
   padding: 0 10px 0 10px;
+  margin-top: 50px;
+  top: 60px;
 }
 
 .main_heading {
